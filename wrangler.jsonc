@@ -1,0 +1,18 @@
+{
+  "name": "dreamwebstudio",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    // Self-reference used by the OpenNext Cloudflare adapter for ISR/on-demand revalidation.
+    // Must match "name" above, otherwise Cloudflare cannot resolve the binding (error 10143).
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "dreamwebstudio"
+    }
+  ]
+}
