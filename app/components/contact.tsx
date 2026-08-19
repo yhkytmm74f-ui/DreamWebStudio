@@ -183,7 +183,7 @@ export function Contact() {
                       type="email"
                       required
                       className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-zinc-600 hover:border-white/20 focus:border-gold/40 focus:ring-1 focus:ring-gold/20"
-                      placeholder="ihre@email.de"
+                      placeholder="ihre@email.ch"
                     />
                   </div>
                 </div>

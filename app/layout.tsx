@@ -15,14 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "DreamWebStudio — Premium Webagentur",
   description:
-    "Luxuriöse Websites und Web-Apps — Design, Entwicklung und Branding auf höchstem Niveau. DreamWebStudio, Ihre Premium Webagentur aus Berlin.",
+    "Luxuriöse Websites und Web-Apps — Design, Entwicklung und Branding auf höchstem Niveau. DreamWebStudio, Ihre Premium Webagentur aus St. Gallen, Schweiz.",
   keywords: [
     "Webagentur",
     "Webdesign",
     "Webentwicklung",
     "Next.js",
     "UI/UX Design",
-    "Berlin",
+    "St. Gallen",
+    "Schweiz",
   ],
   openGraph: {
     title: "DreamWebStudio — Premium Webagentur",
