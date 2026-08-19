@@ -7,6 +7,12 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "dreamwebstudio.ch", "custom_domain": true },
+    { "pattern": "www.dreamwebstudio.ch", "custom_domain": true }
+  ],
   "services": [
     // Self-reference used by the OpenNext Cloudflare adapter for ISR/on-demand revalidation.
     // Must match "name" above, otherwise Cloudflare cannot resolve the binding (error 10143).
