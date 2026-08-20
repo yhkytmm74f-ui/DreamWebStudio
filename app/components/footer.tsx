@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 const footerLinks = {
   Leistungen: [
     { label: "UI/UX Design", href: "/#leistungen" },
@@ -14,6 +15,7 @@ const footerLinks = {
   Rechtliches: [
     { label: "Impressum", href: "/impressum" },
     { label: "Datenschutz", href: "/datenschutz" },
+    { label: "AGB", href: "/agb" },
   ],
 };
 
