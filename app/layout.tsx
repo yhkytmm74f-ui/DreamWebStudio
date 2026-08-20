@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DreamWebStudio — Premium Webagentur",
+  title: "Webdesign St. Gallen | DreamWebStudio",
   description:
-    "Luxuriöse Websites und Web-Apps — Design, Entwicklung und Branding auf höchstem Niveau. DreamWebStudio, Ihre Premium Webagentur aus St. Gallen, Schweiz.",
+    "Professionelles Webdesign für Unternehmen in St. Gallen und der ganzen Schweiz. DreamWebStudio entwickelt moderne, schnelle Websites, die Kunden gewinnen.",
   keywords: [
     "Webagentur",
     "Webdesign",
@@ -25,11 +25,19 @@ export const metadata: Metadata = {
     "St. Gallen",
     "Schweiz",
   ],
+  alternates: {
+    canonical: "https://dreamwebstudio.ch",
+  },
   openGraph: {
-    title: "DreamWebStudio — Premium Webagentur",
+    title: "Webdesign St. Gallen | DreamWebStudio",
     description:
-      "Digitale Erlebnisse, die begeistern. Design, Entwicklung und Branding auf höchstem Niveau.",
+      "Professionelles Webdesign für Unternehmen in St. Gallen und der ganzen Schweiz. DreamWebStudio entwickelt moderne, schnelle Websites, die Kunden gewinnen.",
     type: "website",
+  },
+  twitter: {
+    title: "Webdesign St. Gallen | DreamWebStudio",
+    description:
+      "Professionelles Webdesign für Unternehmen in St. Gallen und der ganzen Schweiz. DreamWebStudio entwickelt moderne, schnelle Websites, die Kunden gewinnen.",
   },
 };
 
