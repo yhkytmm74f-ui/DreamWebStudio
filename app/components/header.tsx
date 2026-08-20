@@ -18,6 +18,7 @@ export function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -71,14 +72,16 @@ export function Header() {
           className="rounded-lg p-2 text-zinc-400 transition-colors hover:text-white md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           {menuOpen ? <IconClose /> : <IconMenu />}
         </button>
       </div>
 
       {menuOpen && (
-        <div className="glass-strong absolute inset-x-0 top-full border-t border-white/10 md:hidden">
-          <nav className="flex flex-col gap-1 px-6 py-4">
+        <div className="absolute inset-x-0 top-full border-t border-white/10 bg-[#080808] shadow-2xl shadow-black/60 md:hidden">
+          <nav id="mobile-navigation" className="flex flex-col gap-1 px-6 py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}

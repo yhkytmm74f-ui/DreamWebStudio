@@ -74,6 +74,24 @@ body {
   animation: gradient-shift 16s ease-in-out infinite;
 }
 
+@keyframes fade-in-up-mobile {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .animate-fade-in-up {
+    animation-name: fade-in-up-mobile;
+    animation-duration: 0.55s;
+  }
+}
+
 .glass {
   background: var(--glass);
   backdrop-filter: blur(20px);

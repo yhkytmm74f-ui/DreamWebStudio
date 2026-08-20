@@ -48,7 +48,9 @@ const demoCards = [
 export function HeroShowcase() {
   const frameRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
+  // Start in the lightweight mobile mode so hydration cannot cause a visible
+  // transform jump on phones. Desktop animation is enabled after detection.
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
@@ -68,8 +70,9 @@ export function HeroShowcase() {
     mass: 0.5,
   });
 
-  const maxTilt = shouldReduceMotion ? 0 : isMobile ? 3 : 8;
-  const minScale = shouldReduceMotion ? 1 : isMobile ? 0.98 : 0.94;
+  const disableTransform = shouldReduceMotion || isMobile;
+  const maxTilt = disableTransform ? 0 : 8;
+  const minScale = disableTransform ? 1 : 0.94;
 
   const rotateX = useTransform(smoothProgress, [0, 1], [maxTilt, 0]);
   const scale = useTransform(smoothProgress, [0, 1], [minScale, 1]);
