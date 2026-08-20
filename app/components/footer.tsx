@@ -1,19 +1,19 @@
+import Link from "next/link";
 const footerLinks = {
   Leistungen: [
-    { label: "UI/UX Design", href: "#leistungen" },
-    { label: "Webentwicklung", href: "#leistungen" },
-    { label: "SEO & Performance", href: "#leistungen" },
+    { label: "UI/UX Design", href: "/#leistungen" },
+    { label: "Webentwicklung", href: "/#leistungen" },
+    { label: "SEO & Performance", href: "/#leistungen" },
   ],
   Unternehmen: [
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Über uns", href: "#warum" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Portfolio", href: "/#portfolio" },
+    { label: "Über uns", href: "/#warum" },
+    { label: "FAQ", href: "/#faq" },
+    { label: "Kontakt", href: "/#kontakt" },
   ],
   Rechtliches: [
-    { label: "Impressum", href: "#" },
-    { label: "Datenschutz", href: "#" },
-    { label: "AGB", href: "#" },
+    { label: "Impressum", href: "/impressum" },
+    { label: "Datenschutz", href: "/datenschutz" },
   ],
 };
 
@@ -23,8 +23,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-2 lg:border-r lg:border-white/[0.06] lg:pr-10">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-80"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-gold text-sm font-bold text-black">
@@ -33,7 +33,7 @@ export function Footer() {
               <span className="text-lg font-semibold tracking-tight">
                 Dream<span className="text-gradient-gold">Web</span>Studio
               </span>
-            </a>
+            </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-zinc-500">
               Webdesign & Entwicklung aus St. Gallen – für moderne,
               professionelle und überzeugende Webauftritte.
@@ -48,12 +48,12 @@ export function Footer() {
               <ul className="mt-6 space-y-3.5">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="inline-block text-sm text-zinc-400 transition-[color,transform] duration-300 hover:translate-x-0.5 hover:text-gold"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
