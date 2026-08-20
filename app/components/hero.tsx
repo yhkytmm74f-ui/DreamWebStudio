@@ -1,24 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { HeroShowcase } from "./hero-showcase";
 import { IconArrowRight } from "./icons";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const blobY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    shouldReduceMotion ? [0, 0] : [0, 60]
-  );
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -47,16 +34,13 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden pt-32 pb-24 sm:pb-32"
+      className="relative overflow-hidden pb-8 pt-28 sm:pb-32 sm:pt-32"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="hero-pointer-glow absolute inset-0" />
-        <motion.div
-          style={{ y: blobY }}
-          className="absolute -top-40 left-1/4 h-[500px] w-[500px]"
-        >
+        <div className="absolute -top-40 left-1/4 hidden h-[500px] w-[500px] sm:block">
           <div className="animate-gradient-shift absolute inset-0 rounded-full bg-gold/8 blur-[120px]" />
-        </motion.div>
+        </div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </div>
 

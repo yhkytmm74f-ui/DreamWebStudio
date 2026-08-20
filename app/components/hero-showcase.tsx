@@ -1,14 +1,3 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-
 const demoNavLinks = ["Kollektion", "Atelier", "Kontakt"];
 
 const demoCards = [
@@ -46,42 +35,9 @@ const demoCards = [
 ];
 
 export function HeroShowcase() {
-  const frameRef = useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-  // Start in the lightweight mobile mode so hydration cannot cause a visible
-  // transform jump on phones. Desktop animation is enabled after detection.
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-    const update = () => setIsMobile(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: frameRef,
-    offset: ["start 90%", "start 45%"],
-  });
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 22,
-    mass: 0.5,
-  });
-
-  const disableTransform = shouldReduceMotion || isMobile;
-  const maxTilt = disableTransform ? 0 : 8;
-  const minScale = disableTransform ? 1 : 0.94;
-
-  const rotateX = useTransform(smoothProgress, [0, 1], [maxTilt, 0]);
-  const scale = useTransform(smoothProgress, [0, 1], [minScale, 1]);
-
   return (
-    <div className="mx-auto mt-16 max-w-5xl sm:mt-20">
-      <motion.div
-        ref={frameRef}
-        style={{ rotateX, scale, transformPerspective: 1200 }}
+    <div className="mx-auto mt-12 max-w-5xl sm:mt-20">
+      <div
         className="origin-bottom overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-[0_2px_10px_rgba(0,0,0,0.45),0_50px_120px_-40px_rgba(0,0,0,0.65)] ring-1 ring-inset ring-white/[0.04]"
       >
         {/* browser chrome */}
@@ -155,7 +111,7 @@ export function HeroShowcase() {
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

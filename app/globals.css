@@ -87,8 +87,24 @@ body {
 
 @media (max-width: 767px) {
   .animate-fade-in-up {
-    animation-name: fade-in-up-mobile;
-    animation-duration: 0.55s;
+    animation: none;
+    opacity: 1 !important;
+    transform: none;
+    filter: none;
+  }
+
+  .animate-gradient-shift {
+    animation: none;
+  }
+
+  .hero-pointer-glow {
+    display: none;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
